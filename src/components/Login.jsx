@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Function to handle login
-
   const handleLogin = async () => {
     try {
       const res = await axios.post(
