@@ -6,8 +6,8 @@ import { BASE_URL } from "../utils/contants";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [emailId, setEmailId] = useState("gauravsatija1063@gmail.com");
-  const [password, setPassword] = useState("Gaurav@123");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(res.data);
+
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (error) {
@@ -61,7 +61,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <div className="card-actions justify-center ">
+        <div className="card-actions flex flex-col items-center justify-center">
           <p className="text-red-500">{error}</p>
           <button className="btn btn-primary" onClick={handleLogin}>
             Login

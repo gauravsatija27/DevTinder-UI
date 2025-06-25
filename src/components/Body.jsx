@@ -19,7 +19,7 @@ const Body = () => {
         withCredentials: true,
       });
       dispatch(addUser(res.data));
-      console.log("User fetched successfully:", res.data);
+    
     } catch (error) {
       if (error.status === 401) {
         navigate("/login");
